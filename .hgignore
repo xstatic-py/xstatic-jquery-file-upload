@@ -1,0 +1,8 @@
+.*\.py[co]$
+^dist/
+^XStatic_jQuery_File_Upload.egg-info/
+^MANIFEST$
+.DS_Store
+.orig$
+.rej$
+.~$
