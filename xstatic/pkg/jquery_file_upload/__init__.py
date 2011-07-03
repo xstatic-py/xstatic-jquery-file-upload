@@ -41,7 +41,7 @@ class JQueryFileUpload(XStatic):
     homepage = 'http://plugins.jquery.com/project/jQuery-File-Upload'
 
     # this refers to all files:
-    license = '(same a %s)' % display_name
+    license = '(same as %s)' % display_name
 
     locations = {
     }
