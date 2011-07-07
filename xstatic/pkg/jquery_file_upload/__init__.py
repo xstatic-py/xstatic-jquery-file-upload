@@ -16,7 +16,7 @@ except ImportError:
 class JQueryFileUpload(XStatic):
     name = 'jquery_file_upload' # short, all lowercase name
     display_name = 'jQuery-File-Upload' # official name, upper/lowercase allowed
-    version = '4.4.0' # for simplicity, use same version x.y.z as bundled files
+    version = '4.4.1' # for simplicity, use same version x.y.z as bundled files
                         # additionally we append .b for our build number, so we
                         # can release new builds with fixes for xstatic stuff.
 
