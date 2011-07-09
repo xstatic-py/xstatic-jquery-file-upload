@@ -1,48 +1,43 @@
 """
-jQuery-File-Upload package
+XStatic resource package
+
+See package 'XStatic' for documentation and basic tools.
 """
 
+DISPLAY_NAME = 'jQuery-File-Upload' # official name, upper/lowercase allowed, no spaces
+PACKAGE_NAME = 'XStatic-%s' % DISPLAY_NAME # name used for PyPi
+
+NAME = __name__.split('.')[-1] # package name (e.g. 'foo' or 'foo_bar')
+                               # please use a all-lowercase valid python
+                               # package name
+
+VERSION = '4.4' # version of the packaged files, please use the upstream
+                # version number
+BUILD = '2' # our package build number, so we can release new builds
+            # with fixes for xstatic stuff.
+PACKAGE_VERSION = VERSION + '.' + BUILD # version used for PyPi
+
+DESCRIPTION = "%s %s (XStatic packaging standard)" % (DISPLAY_NAME, VERSION)
+
+PLATFORMS = 'any'
+CLASSIFIERS = []
+KEYWORDS = '%s xstatic' % NAME
+
+# XStatic-* package maintainer:
+MAINTAINER = 'Thomas Waldmann'
+MAINTAINER_EMAIL = 'tw@waldmann-edv.de'
+
+# this refers to the project homepage of the stuff we packaged:
+HOMEPAGE = 'http://plugins.jquery.com/project/jQuery-File-Upload'
+
+# this refers to all files:
+LICENSE = '(same as %s)' % DISPLAY_NAME
+
 from os.path import join, dirname
+BASE_DIR = join(dirname(__file__), 'data')
+# linux package maintainers just can point to their file locations like this:
+#BASE_DIR = '/usr/share/javascript/jquery'
 
-try:
-    from xstatic.main import XStatic
-except ImportError:
-    class XStatic(object):
-        """
-        just a dummy for the time when setup.py is running and
-        for the case that xstatic is not already installed.
-        """
-
-class JQueryFileUpload(XStatic):
-    name = 'jquery_file_upload' # short, all lowercase name
-    display_name = 'jQuery-File-Upload' # official name, upper/lowercase allowed
-    version = '4.4.1' # for simplicity, use same version x.y.z as bundled files
-                        # additionally we append .b for our build number, so we
-                        # can release new builds with fixes for xstatic stuff.
-
-    base_dir = join(dirname(__file__), 'data')
-    # linux package maintainers just can point to their file locations like this:
-    # base_dir = '/usr/share/javascript/jquery-file-upload'
-
-    description = "%s (XStatic packaging standard)" % display_name
-
-    platforms = 'any'
-    classifiers = []
-    keywords = '%s xstatic' % name
-
-    # this all refers to the XStatic-* package:
-    author = 'Thomas Waldmann'
-    author_email = 'tw@waldmann-edv.de'
-    # XXX shall we have another bunch of entries for the bundled files?
-    # like upstream_author/homepage/download/...?
-    # note: distutils/register can't handle author and maintainer at once.
-
-    # this refers to the project homepage of the stuff we packaged:
-    homepage = 'http://plugins.jquery.com/project/jQuery-File-Upload'
-
-    # this refers to all files:
-    license = '(same as %s)' % display_name
-
-    locations = {
-    }
+LOCATIONS = {
+}
 
